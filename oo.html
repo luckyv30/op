@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #eadddf; /* Light pinkish-grey background */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #000;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            position: relative;
+            width: 400px;
+            height: 400px; /* Area jisme 'No' button ghumega */
+        }
+
+        button {
+            font-size: 1.5rem;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Yes Button Styling */
+        #btn-yes {
+            background-color: #ff0033; /* Red color */
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        /* No Button Styling */
+        #target {
+            background-color: #0066ff; /* Blue color */
+            position: absolute; /* Yeh property button ko move karne ke liye zaroori hai */
+            left: 200px;
+            top: 50px;
+            transition: 0.1s; /* Thoda smooth movement ke liye */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="game-container">
+        <h1>Do you love me? 💖</h1>
+        
+        <div class="buttons">
+            <button id="btn-yes" onclick="alert('love you 2 ❤️')">Yes</button>
+            
+            <button id="target" onmouseover="moveTarget()">No</button>
+        </div>
+    </div>
+
+    <script>
+        // JS code exactly as shown in your image
+        const target = document.getElementById('target');
+
+        function moveTarget() {
+            // Button is area ke andar move karega
+            const maxWidth = 300; 
+            const maxHeight = 300;
+
+            // Random X aur Y coordinates generate karna
+            const randomX = Math.floor(Math.random() * maxWidth);
+            const randomY = Math.floor(Math.random() * maxHeight);
+
+            // Button ki nayi position set karna
+            target.style.left = randomX + 'px';
+            target.style.top = randomY + 'px';
+        }
+    </script>
+
+</body>
+</html>
